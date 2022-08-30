@@ -4,7 +4,7 @@ from datetime import datetime
 from datetime import date
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://uajyocnbfrotvo:3178edc598ff2676d3e5be7681f44bccc3da83ae7f2c2f4762b5ca43e1c5c4da@ec2-44-210-36-247.compute-1.amazonaws.com:5432/deolrt4s7iaiq1"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://uajyocnbfrotvo:3178edc598ff2676d3e5be7681f44bccc3da83ae7f2c2f4762b5ca43e1c5c4da@ec2-44-210-36-247.compute-1.amazonaws.com:5432/deolrt4s7iaiq1"
 app.config['SECRET_KEY'] = "random string"
 
 db = SQLAlchemy(app)
