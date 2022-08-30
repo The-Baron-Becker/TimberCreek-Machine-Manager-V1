@@ -2,7 +2,7 @@ from flask import Flask, request, flash, url_for, redirect, render_template
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from datetime import date
-import psyco2
+import psycopg2
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://uajyocnbfrotvo:3178edc598ff2676d3e5be7681f44bccc3da83ae7f2c2f4762b5ca43e1c5c4da@ec2-44-210-36-247.compute-1.amazonaws.com:5432/deolrt4s7iaiq1"
