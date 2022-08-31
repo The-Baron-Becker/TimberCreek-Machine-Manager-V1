@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from datetime import date
 import psycopg2
+import os
 #from waitress import serve
 
 
@@ -52,4 +53,5 @@ if __name__ == '__main__':
    #serve(app, host="0.0.0.0", port=8080)
    #app.run(debug = True)
 
-app.run(port = "8080")
+app.run(host=os.getenv('IP', '0.0.0.0'), 
+            port=int(os.getenv('PORT', 4444)))
