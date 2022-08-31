@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from datetime import date
 import psycopg2
-from waitress import serve
+#from waitress import serve
 
 
 app = Flask(__name__)
@@ -47,8 +47,9 @@ def new():
    return render_template('new.html')
 
 if __name__ == '__main__':
-   db.create_all()
-   serve(app, host="0.0.0.0", port=8080)
+   db.create_all()   
+   
+   #serve(app, host="0.0.0.0", port=8080)
    #app.run(debug = True)
 
-app.run(debug=True)
+app.run(debug=True, port = '8000')
