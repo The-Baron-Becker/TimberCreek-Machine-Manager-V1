@@ -8,7 +8,7 @@ import os
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://uajyocnbfrotvo:3178edc598ff2676d3e5be7681f44bccc3da83ae7f2c2f4762b5ca43e1c5c4da@ec2-44-210-36-247.compute-1.amazonaws.com:5432/deolrt4s7iaiq1"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://rzyblqkahiwtxc:8fa847dcf5bb3bccbcac10627aa8cef23ba147244cf0988a653a324b1e9278a8@ec2-52-3-60-53.compute-1.amazonaws.com:5432/d1a4t9u0q7fjh5"
 app.config['SECRET_KEY'] = "random string"
 
 db = SQLAlchemy(app)
@@ -19,16 +19,18 @@ class machines(db.Model):
     employee = db.Column(db.String(200), nullable = False)
     machine = db.Column(db.String(200), nullable = False)
     task = db.Column(db.String(200), nullable = False)
+    hours = db.Column(db.Integer, nullable = False)
     note = db.Column(db.String(200), nullable = False)
 
     def __repr__(self):
         return '<Name %r>' % self.name
 
-def __init__(self, date, employee, machine,task,note):
+def __init__(self, date, employee, machine, task, hours, note):
    self.date = date
    self.employee = employee
    self.machine = machine
    self.task = task
+   self.hours = hours
    self.note = note
 
 @app.route('/')
@@ -39,7 +41,7 @@ def show_all():
 def new():
    if request.method == 'POST':
         new_task = machines(employee = request.form.get('employee'), machine = request.form.get('machine'),
-        task = request.form.get('task'), note = request.form.get('note'))
+        task = request.form.get('task'), hours = request.form.get('hours'), note = request.form.get('note'))
         
         db.session.add(new_task)
         db.session.commit()
