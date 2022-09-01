@@ -39,7 +39,7 @@
          <a> TimberCreek Farm Machine Manager</a>
       </h3>
       
-      <hr/ style="font-size: 26px">
+      <hr/>
       {%- for message in get_flashed_messages() %}
          {{ message }}
       {%- endfor %}
@@ -49,7 +49,7 @@
       
       <table>
          <thead>
-            <tr >
+            <tr style="font-size: 35px">
                <th>Date</th>
                <th>Employee</th>
                <th>Machine</th>
@@ -61,7 +61,7 @@
          
          <tbody>
             {% for machine in machines %}
-               <tr>
+               <tr style="font-size: 35px">
                   <td>{{ machine.date }}</td>
                   <td>{{ machine.employee }}</td>
                   <td>{{ machine.machine }}</td>

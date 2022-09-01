@@ -36,7 +36,7 @@
    
    <body>
    
-      <h3 style="font-size: 26px">TimberCreek Farm Machine Manager</h3>
+      <h3 style="font-size: 35px">TimberCreek Farm Machine Manager</h3>
       <hr/>
       
       {%- for category, message in get_flashed_messages(with_categories = true) %}
@@ -58,7 +58,7 @@
          </select>
 
          <label for="machine">Machine</label>
-         <select id="machine" name="machine">
+         <select id="machine" name="machine" style="font-size: 35px">
             <option value="">Select machine id...</option>
             <option value="F150">F150</option>
             <option value="F250">F250</option>
@@ -113,7 +113,7 @@
             <option value="Freightliner Sprinter">Freightliner Sprinter</option>
             <option value="Drum Mulcher">Drum Mulcher</option>
             
-         </select>
+         </select style="font-size: 35px">
 
          <label for="task">Maintenance Task</label>
          <select id="task" name="task">
