@@ -40,6 +40,11 @@ def show_all():
 @app.route('/new', methods = ['GET', 'POST'])
 def new():
    if request.method == 'POST':
+      if not request.form['employee']:
+            flash('Please select employee id', 'error')
+
+      else:
+
         new_task = machines(employee = request.form.get('employee'), machine = request.form.get('machine'),
         task = request.form.get('task'), hours = request.form.get('hours'), note = request.form.get('note'))
         
@@ -50,7 +55,4 @@ def new():
    return render_template('new.html')
 
 if __name__ == '__main__':
-   db.create_all()   
-   
-   #serve(app, host="0.0.0.0", port=8080)
-   #app.run(debug = True)
+   db.create_all()
