@@ -35,12 +35,12 @@ def __init__(self, date, employee, machine, task, hours, note):
 
 @app.route('/')
 def show_all():
-   return render_template('show_all.html', machines = machines.query.all() )
+   return render_template('show_all.html', machines = machines.query.all())
 
 @app.route('/new', methods = ['GET', 'POST'])
 def new():
    if request.method == 'POST':
-      if not request.form['employee']:
+      if request.form['employee'] == "employee":
             flash('Please select employee id', 'error')
 
       else:
