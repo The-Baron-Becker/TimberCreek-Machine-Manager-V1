@@ -25,11 +25,12 @@ class machines(db.Model):
     def __repr__(self):
         return '<Name %r>' % self.name
 
-def __init__(self, date, employee, machine, task, hours, note):
+def __init__(self, date, employee, machine, task, other, hours, note):
    self.date = date
    self.employee = employee
    self.machine = machine
    self.task = task
+   self.other = other
    self.hours = hours
    self.note = note
 
@@ -46,7 +47,7 @@ def new():
       else:
 
         new_task = machines(employee = request.form.get('employee'), machine = request.form.get('machine'),
-        task = request.form.get('task'), hours = request.form.get('hours'), note = request.form.get('note'))
+        task = request.form.get('task')+request.form.get('other'), hours = request.form.get('hours'), note = request.form.get('note'))
         
         db.session.add(new_task)
         db.session.commit()
