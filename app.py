@@ -19,7 +19,7 @@ class machines(db.Model):
     employee = db.Column(db.String(200), nullable = False)
     machine = db.Column(db.String(200), nullable = False)
     task = db.Column(db.String(200), nullable = False)
-    hours = db.Column(db.Integer)
+    hours = db.Column(db.String)
     note = db.Column(db.String(200), nullable = False)
 
     def __repr__(self):
