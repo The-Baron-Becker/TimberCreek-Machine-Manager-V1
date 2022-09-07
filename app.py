@@ -15,7 +15,7 @@ db = SQLAlchemy(app)
 
 class machines(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    date = db.Column(db.DateTime, default = datetime.now())
+    date = db.Column(db.String, default = str(datetime.now().date()))
     employee = db.Column(db.String(200), nullable = False)
     machine = db.Column(db.String(200), nullable = False)
     task = db.Column(db.String(200), nullable = False)
