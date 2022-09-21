@@ -50,12 +50,24 @@
         background-color: #dddddd;
       
       }
+
+      a.app_name {
+         margin: 35px;
+      }
+
+      h3.page_link {
+         margin: 35px;
+      }
+
+
+
+
       
       </style>
    <body>
       
       <h3> 
-         <a style="font-size: 55px"> TimberCreek Farm Machine Manager</a>
+         <a class = app_name style="font-size: 55px"> TimberCreek Farm Machine Manager</a>
       </h3>
       
       <hr/>
@@ -63,7 +75,7 @@
          {{ message }}
       {%- endfor %}
 		
-      <h3 style="font-size: 55px"><a href = "{{ url_for('new') }}">Add new maintenance task
+      <h3 class = page_link style="font-size: 55px"><a href = "{{ url_for('new') }}">Add new maintenance task
          </a></h3>
       
       <table>
