@@ -6,6 +6,7 @@ import psycopg2
 import os
 from sqlalchemy import desc
 import pandas as pd
+from sqlalchemy import create_engine
 #from waitress import serve
 
 
@@ -39,9 +40,9 @@ def __init__(self, date, employee, machine, task, other, hours, note):
 @app.route('/')
 def show_all():
 
-   df = pd.read_sql(machines.query.all(), machines.session.bind)
+   #df = pd.read_sql(machines.query.all(), db)
 
-   print(df)
+   #print(df)
 
    return render_template('show_all.html', machines = machines.query.all())
 
