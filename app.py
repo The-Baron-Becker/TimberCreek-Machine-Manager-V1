@@ -5,6 +5,7 @@ from datetime import date
 import psycopg2
 import os
 from sqlalchemy import desc
+import pandas as pd
 #from waitress import serve
 
 
@@ -37,7 +38,12 @@ def __init__(self, date, employee, machine, task, other, hours, note):
 
 @app.route('/')
 def show_all():
-   return render_template('show_all.html', machines = machines.order_by(desc(date)).query.all())
+
+   df = pd.read_sql(machines.query.all())
+
+   print(df)
+
+   return render_template('show_all.html', machines = machines.query.all())
 
 @app.route('/new', methods = ['GET', 'POST'])
 def new():
