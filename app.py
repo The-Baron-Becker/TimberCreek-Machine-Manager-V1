@@ -40,11 +40,11 @@ def __init__(self, date, employee, machine, task, other, hours, note):
 @app.route('/')
 def show_all():
 
-   #df = pd.read_sql(machines.query.all(), db)
+   machines = machines.query.all()
 
-   #print(df)
+   machines = machines[::-1]
 
-   return render_template('show_all.html', machines = machines.query.all())
+   return render_template('show_all.html', machines = machines)
 
 @app.route('/new', methods = ['GET', 'POST'])
 def new():
