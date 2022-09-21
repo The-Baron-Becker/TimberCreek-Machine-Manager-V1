@@ -4,6 +4,7 @@ from datetime import datetime
 from datetime import date
 import psycopg2
 import os
+from sqlalchemy import desc
 #from waitress import serve
 
 
@@ -36,7 +37,7 @@ def __init__(self, date, employee, machine, task, other, hours, note):
 
 @app.route('/')
 def show_all():
-   return render_template('show_all.html', machines = machines.query.all())
+   return render_template('show_all.html', machines = machines.query.all().order_by(desc(date)))
 
 @app.route('/new', methods = ['GET', 'POST'])
 def new():
