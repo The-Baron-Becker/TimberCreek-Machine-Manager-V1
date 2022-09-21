@@ -39,7 +39,7 @@ def __init__(self, date, employee, machine, task, other, hours, note):
 @app.route('/')
 def show_all():
 
-   df = pd.read_sql(machines.query.all())
+   df = pd.read_sql(machines.query.all(), machines.session.bind)
 
    print(df)
 
