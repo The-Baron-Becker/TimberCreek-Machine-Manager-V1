@@ -39,8 +39,13 @@ def __init__(self, date, employee, machine, task, other, hours, note):
 
 @app.route('/')
 def show_all():
-   
-   return render_template('show_all.html', machines = machines.query.all()[::-1])
+
+   if request.form.get('machine') == "all":
+      machines = machines.query.all()[::-1]
+   else:
+      m = request.form.get('machine')
+      machines = machines.query.filter_by(machine = m)
+   return render_template('show_all.html', machines = machines)
 
 @app.route('/new', methods = ['GET', 'POST'])
 def new():
