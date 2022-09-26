@@ -40,7 +40,7 @@ def __init__(self, date, employee, machine, task, other, hours, note):
 @app.route('/')
 def show_all():
 
-   if request.form.get('machine'):
+   if request.form.get('machine_filter'):
       
       return render_template('show_all.html', machines = machines.query.all()[::-1])
    else:
