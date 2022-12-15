@@ -39,7 +39,7 @@ def __init__(self, date, employee, machine, task, other, hours, note):
 
 @app.route('/')
 def show_all():
-   return render_template('show_all.html', machines = machines.query.order_by(machines.date.desc()).order_by(machines.machine))
+   return render_template('show_all.html', machines = machines.query.order_by(machines.date.desc()))
 
 @app.route('/new', methods = ['GET', 'POST'])
 def new():
