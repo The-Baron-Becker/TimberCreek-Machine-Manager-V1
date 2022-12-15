@@ -50,7 +50,7 @@ def new():
       else:
 
         new_task = machines(employee = request.form.get('employee'), machine = request.form.get('machine'),
-        task = request.form.get('task')+request.form.get('other'), hours = request.form.get('hours'), note = request.form.get('note'))
+        task = request.form.get('task')+" "+request.form.get('other'), hours = request.form.get('hours'), note = request.form.get('note'))
         
         db.session.add(new_task)
         db.session.commit()
