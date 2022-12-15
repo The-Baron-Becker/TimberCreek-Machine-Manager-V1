@@ -11,7 +11,7 @@ from sqlalchemy import create_engine
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://fmmyadnsacuxoi:a6c1b059a5e7aa869aba2ab8e8f8a61593afe930a852856a35a73f3ed64f81c0@ec2-44-207-133-100.compute-1.amazonaws.com:5432/d9gs2n7uf4cgu"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://fmmyadnsacuxoi:a6c1b059a5e7aa869aba2ab8e8f8a61593afe930a852856a35a73f3ed64f81c0@ec2-44-207-133-100.compute-1.amazonaws.com:5432/d9gs2n7uf4cgu"
 app.config['SECRET_KEY'] = "random string"
 
 db = SQLAlchemy(app)
