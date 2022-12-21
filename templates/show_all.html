@@ -54,6 +54,14 @@
    </head>
       
    <body>
+
+      <script>
+         $(document).ready(function () {
+         $('#dtBasicExample').DataTable();
+         $('.dataTables_length').addClass('bs-select');
+         });
+      </script>
+      
       <h3 class = app_name style="font-size: 55px"> TimberCreek Farm Machine Manager</h3>
       <hr/>
       {%- for message in get_flashed_messages() %}
@@ -90,12 +98,7 @@
          </tbody>
       </table>
 
-      <script>
-         $(document).ready(function () {
-         $('#dtBasicExample').DataTable();
-         $('.dataTables_length').addClass('bs-select');
-         });
-      </script>
+
       
    </body>
 </html>
